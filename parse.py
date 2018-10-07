@@ -15,5 +15,7 @@ class parse:
             return
         soup = BeautifulSoup(txt, 'html.parser')
         print soup
-        divsoup = soup.find('div', class_='WB_feed WB_feed_v3 WB_feed_v4')
-        # print divsoup
+        divsoup = soup.find_all('div', attrs={'action-type': 'feed_list_item'})
+        for div in divsoup:
+            print div
+            print '**************************************************************************************************'
